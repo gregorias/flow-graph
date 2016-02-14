@@ -205,9 +205,7 @@ using std::vector;
 template <class T>
 T Future<T>::get() const {
   lock_guard<mutex> lock(mutex_);
-  if (value_) {
-    return *value_;
-  }
+  return *value_;
 }
 
 template <class T>
